@@ -158,7 +158,10 @@
               "node_modules/@swimlane/ngx-datatable/assets/icons.css",
               "src/assets/styles/style.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/js/jquery.sparkline.min.js"
+            ]
           }
         },
         "lint": {
