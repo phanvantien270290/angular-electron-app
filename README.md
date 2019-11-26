@@ -15,7 +15,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Getting Started
 ``` bash
-git clone https://github.com/maximegris/angular-electron.git
+git clone https://github.com/phanvantien270290/angular-electron-app.git
 ```
 
 Install dependencies with npm :
