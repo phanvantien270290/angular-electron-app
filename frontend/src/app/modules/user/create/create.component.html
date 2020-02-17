@@ -1,0 +1,93 @@
+<!-- ============================================================== -->
+<!-- Card Grid-->
+<!-- ============================================================== -->
+<div fxLayout="row wrap" style="max-width:700px">
+  <div fxFlex.gt-sm="100" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <!-- ============================================================== -->
+        <!-- column -->
+        <!-- ============================================================== -->
+        <form class="basic-form" [formGroup]="userCreateForm">
+          <div fxLayout="row wrap" fxFlexAlign="center" class="row">
+            <!-- column -->
+            <div fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input matInput placeholder="First Name" name="firstName" formControlName="firstName">
+              </mat-form-field>
+            </div>
+            <!-- column -->
+            <div fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input matInput placeholder="Last Name" formControlName="lastName">
+              </mat-form-field>
+            </div>
+            <!-- column -->
+            <div fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input matInput placeholder="Username" type="text" formControlName="username">
+              </mat-form-field>
+              <mat-hint
+                *ngIf="userCreateForm.controls['username'].hasError('required') && userCreateForm.controls['username'].touched"
+                class="text-danger font-14">Please Input username</mat-hint>
+              <mat-hint
+                *ngIf="userCreateForm.controls['username'].hasError('minlength') && userCreateForm.controls['username'].touched"
+                class="text-danger font-14">username must be at least 5 characters long.</mat-hint>
+              <mat-hint
+                *ngIf="userCreateForm.controls['username'].hasError('maxlength') && userCreateForm.controls['username'].touched"
+                class="text-danger font-14">username cannot exceed 20 characters.</mat-hint>
+            </div>
+            <!-- column -->
+            <div fxFlex.gt-sm="100" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'"
+                  formControlName="password">
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+              </mat-form-field>
+              <mat-hint
+                *ngIf="userCreateForm.controls['password'].hasError('required') && userCreateForm.controls['password'].touched"
+                class="text-danger font-14">Please Input username</mat-hint>
+              <mat-hint
+                *ngIf="userCreateForm.controls['password'].hasError('minlength') && userCreateForm.controls['password'].touched"
+                class="text-danger font-14">Your password must be at least 5 characters long.</mat-hint>
+              <mat-hint
+                *ngIf="userCreateForm.controls['password'].hasError('maxlength') && userCreateForm.controls['password'].touched"
+                class="text-danger font-14">Your passwordcannot exceed 10 characters.</mat-hint>
+            </div>
+            <!-- column -->
+            <div fxFlex.gt-sm="100" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input matInput placeholder="Confirm password" [type]="hide ? 'password' : 'text'"
+                  formControlName="confirmPassword">
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+              </mat-form-field>
+            </div>
+            <!-- column -->
+            <div fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input matInput type="email" placeholder="Email" formControlName="email">
+              </mat-form-field>
+            </div>
+            <!-- column -->
+            <div fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input matInput placeholder="Address" formControlName="address">
+              </mat-form-field>
+            </div>
+
+            <div fxFlex.gt-sm="100" fxFlex="100" class="p-10">
+              <mat-card-actions>
+                  <button mat-raised-button color="primary" type="button" (click)="handleSummit()"
+                 >Submit</button>
+                <!-- <button mat-raised-button color="primary" type="button" (click)="handleSummit()"
+                  [disabled]="!userCreateForm.valid">Submit</button> -->
+                <button mat-raised-button color="primary" type="button">Reset</button>
+                <button mat-raised-button color="primary" type="button">Cancel</button>
+              </mat-card-actions>
+            </div>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

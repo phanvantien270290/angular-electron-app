@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-content>
+    <mat-card-title>Users  <a  [routerLink]="['/user','create']" mat-button color="primary">Create</a></mat-card-title>
+    <div class="table-responsive">
+      <ngx-datatable #table class='material' [columns]="columns" [columnMode]="'force'" [headerHeight]="50"
+        [footerHeight]="50" [rowHeight]="'auto'" [limit]="10" [rows]='rows'>
+        <ngx-datatable-column *ngFor="let col of displayedColumns; let i = index" [name]="col.dislayName"
+          [prop]="col.dislayValue">
+        </ngx-datatable-column>
+      </ngx-datatable>
+    </div>
+  </mat-card-content>
+</mat-card>
